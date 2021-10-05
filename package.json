@@ -37,9 +37,11 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.0.2",
     "@types/xml2js": "^0.4.9",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "eslint-config-prettier": "^8.1.0",

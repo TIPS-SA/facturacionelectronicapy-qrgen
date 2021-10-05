@@ -1,8 +1,8 @@
 import qrGen from './QRGen';
 
 class QRGen {
-    generateQR = (xmlSigned: string) : Promise<any> => {
-        return qrGen.generateQR(xmlSigned);
+    generateQR = (xmlSigned: string, env: "test" | "prod") : Promise<any> => {
+        return qrGen.generateQR(xmlSigned, env);
     }
 }
 
