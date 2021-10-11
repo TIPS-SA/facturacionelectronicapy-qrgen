@@ -66,8 +66,6 @@ class QRGen {
 
             qr += "cHashQR=" + valueHashed;
 
-            console.log(qr);
-            //obj['rDE']['gCamFuFD']['dCarQR'] = qr.replace(/amp;amp;/g, 'amp;');
             obj['rDE']['gCamFuFD']['dCarQR'] = {
                 _ : qr
             };
