@@ -50,7 +50,7 @@ class QRGen {
             const dTotIVA = obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'][0];
             qr += "dTotIVA=" + dTotIVA + "&";
 
-            const cItems = obj['rDE']['DE'][0]['gDtipDE'][0]['gCamItem'][0].length;
+            const cItems = obj['rDE']['DE'][0]['gDtipDE'][0]['gCamItem'].length;
             qr += "cItems=" + cItems + "&";
             
             let digestValue = obj['rDE']['Signature'][0]['SignedInfo'][0]['Reference'][0]['DigestValue'][0];
