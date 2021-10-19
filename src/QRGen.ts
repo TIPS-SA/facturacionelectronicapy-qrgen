@@ -9,7 +9,7 @@ class QRGen {
      * @param xml 
      * @returns 
      */
-    generateQR(xml: string, env: "test" | "prod") {
+    generateQR(xml: string, idCSC: string, CSC: string, env: "test" | "prod") {
         
         return xml2js.parseStringPromise(xml).then(obj => {
 
@@ -18,12 +18,13 @@ class QRGen {
             }
             obj['rDE']['gCamFuFD'] = {};
             
-            let qr = "https://ekuatia.set.gov.py/consultas";
+            let qrLink = "https://ekuatia.set.gov.py/consultas";
             if (env == 'test') {
-                qr += "-test";
+                qrLink += "-test";
             }
-            qr += "/qr?";
+            qrLink += "/qr?";
             
+            let qr = "";
             const nVersion = obj['rDE']['dVerFor'][0];
 
             qr += "nVersion=" + nVersion + "&";
@@ -41,7 +42,7 @@ class QRGen {
                 qr += "dRucRec=" + dRucRec + "&";
             } else {
                 dRucRec = obj['rDE']['DE'][0]['gDatGralOpe'][0]['gDatRec'][0]['dNumIDRec'][0];
-                qr += "dRucRec=" + dRucRec + "&";
+                qr += "dNumIDRec=" + dRucRec + "&";
             }
             
             const dTotGralOpe = obj['rDE']['DE'][0]['gTotSub'][0]['dTotGralOpe'][0];
@@ -57,17 +58,18 @@ class QRGen {
             digestValue = Buffer.from(digestValue, 'utf8').toString('hex');
             qr += "DigestValue=" + digestValue + "&";
 
-            const idCSC = "001";
-            qr += "IdCSC=" + idCSC + "&";
+            //const idCSC = "001";
+            qr += "IdCSC=" + idCSC;
 
-            const valueForHash = nVersion + id + dFeEmiDE + dRucRec + dTotGralOpe + dTotIVA + cItems + digestValue + idCSC;
-            let valueHashed = sha256(valueForHash);
+            //const valueForHash = nVersion + id + dFeEmiDE + dRucRec + dTotGralOpe + dTotIVA + cItems + digestValue + idCSC;
+            const valueForHash = qr;
+            let valueHashed = sha256(valueForHash + CSC);
             //valueHashed = Base64.stringify(valueHashed);
 
-            qr += "cHashQR=" + valueHashed;
+            qr += "&cHashQR=" + valueHashed;
 
             obj['rDE']['gCamFuFD']['dCarQR'] = {
-                _ : qr
+                _ : qrLink + qr
             };
             var builder = new xml2js.Builder();
             var xmlWithQR = builder.buildObject(obj);
