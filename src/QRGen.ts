@@ -58,13 +58,10 @@ class QRGen {
             digestValue = Buffer.from(digestValue, 'utf8').toString('hex');
             qr += "DigestValue=" + digestValue + "&";
 
-            //const idCSC = "001";
             qr += "IdCSC=" + idCSC;
 
-            //const valueForHash = nVersion + id + dFeEmiDE + dRucRec + dTotGralOpe + dTotIVA + cItems + digestValue + idCSC;
             const valueForHash = qr;
             let valueHashed = sha256(valueForHash + CSC);
-            //valueHashed = Base64.stringify(valueHashed);
 
             qr += "&cHashQR=" + valueHashed;
 
@@ -76,7 +73,6 @@ class QRGen {
             return xmlWithQR;
             
         });
-        //return xml;
     }
 }
 
