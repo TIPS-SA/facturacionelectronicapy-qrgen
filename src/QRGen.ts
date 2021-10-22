@@ -48,7 +48,10 @@ class QRGen {
             const dTotGralOpe = obj['rDE']['DE'][0]['gTotSub'][0]['dTotGralOpe'][0];
             qr += "dTotGralOpe=" + dTotGralOpe + "&";
             
-            const dTotIVA = obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'][0];
+            let dTotIVA = 0;
+            if (obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'] && obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'][0]) {
+                dTotIVA = obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'][0];
+            }
             qr += "dTotIVA=" + dTotIVA + "&";
 
             const cItems = obj['rDE']['DE'][0]['gDtipDE'][0]['gCamItem'].length;
