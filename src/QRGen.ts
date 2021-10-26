@@ -45,11 +45,22 @@ class QRGen {
                 qr += "dNumIDRec=" + dRucRec + "&";
             }
             
-            const dTotGralOpe = obj['rDE']['DE'][0]['gTotSub'][0]['dTotGralOpe'][0];
+            let dTotGralOpe = 0;
+            if (obj['rDE']['DE'][0]['gTotSub'] && 
+                obj['rDE']['DE'][0]['gTotSub'][0] && 
+                obj['rDE']['DE'][0]['gTotSub'][0]['dTotGralOpe'] && 
+                obj['rDE']['DE'][0]['gTotSub'][0]['dTotGralOpe'][0]) {
+
+                dTotGralOpe = obj['rDE']['DE'][0]['gTotSub'][0]['dTotGralOpe'][0];
+            }
             qr += "dTotGralOpe=" + dTotGralOpe + "&";
             
             let dTotIVA = 0;
-            if (obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'] && obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'][0]) {
+            if (obj['rDE']['DE'][0]['gTotSub'] && 
+                obj['rDE']['DE'][0]['gTotSub'][0] && 
+                obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'] && 
+                obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'][0]) {
+                    
                 dTotIVA = obj['rDE']['DE'][0]['gTotSub'][0]['dTotIVA'][0];
             }
             qr += "dTotIVA=" + dTotIVA + "&";
