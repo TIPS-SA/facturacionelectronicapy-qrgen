@@ -87,7 +87,6 @@ class QRGen {
 
       qr += "IdCSC=" + idCSC;
 
-      console.log(qr + CSC);
       const valueForHash = qr;
       let valueHashed = sha256(valueForHash + CSC);
 
