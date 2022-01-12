@@ -50,10 +50,9 @@ class QRGen {
       } else {
         if (obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["dNumIDRec"]) {
           dRucRec =
-          obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["dNumIDRec"][0];  
+            obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["dNumIDRec"][0];
         }
         qr += "dNumIDRec=" + dRucRec + "&";
-
       }
 
       let dTotGralOpe = 0;
