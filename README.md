@@ -33,4 +33,4 @@ https://github.com/marcosjara/facturacionelectronicapy-xmlgen
 ## Empresas que utilizan éstos proyectos
 [JHF Ingeniería Informática](https://jhf.com.py/)<br/>
 [JR Ingeniería y Servicios](https://jringenieriayservicios.com/)<br/>
-[FacturaSend](https://www.facturasend.com/)<br/>
+[FacturaSend](https://www.facturasend.com.py/)<br/>
