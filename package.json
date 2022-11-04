@@ -1,6 +1,6 @@
 {
   "name": "facturacionelectronicapy-qrgen",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Módulo NodeJs para generar el Valor para el Código QR en el Archivo XML Firmado para la Facturación Electrónica en Paraguay",
   "main": "dist/index.js",
   "scripts": {

@@ -48,10 +48,10 @@ class QRGen {
           obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["dRucRec"][0];
         qr += "dRucRec=" + dRucRec + "&";
       } else {
-        
-
         //Nt010
-        if (obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["iTiOpe"][0] == 4) {
+        if (
+          obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["iTiOpe"][0] == 4
+        ) {
           //Si es B2F entonces el dNumIDRec=0
           dRucRec = "0";
         }
