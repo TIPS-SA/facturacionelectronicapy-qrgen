@@ -44,10 +44,14 @@ class QRGen {
       if (
         obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["iNatRec"][0] == 1
       ) {
+        //Contribuyente
         dRucRec =
           obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["dRucRec"][0];
         qr += "dRucRec=" + dRucRec + "&";
       } else {
+        //No contribuyente
+        dRucRec =
+          obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["dNumIDRec"][0];
         //Nt010
         if (
           obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["iTiOpe"][0] == 4
