@@ -84,7 +84,11 @@ class QRGen {
       }
       qr += "dTotIVA=" + dTotIVA + "&";
 
-      const cItems = obj["rDE"]["DE"][0]["gDtipDE"][0]["gCamItem"].length;
+      let cItems = 0;
+      if (obj["rDE"]["DE"][0]["gDtipDE"][0] && obj["rDE"]["DE"][0]["gDtipDE"][0]["gCamItem"] && obj["rDE"]["DE"][0]["gDtipDE"][0]["gCamItem"].length > 0) {
+        cItems = obj["rDE"]["DE"][0]["gDtipDE"][0]["gCamItem"].length;
+      }
+      
       qr += "cItems=" + cItems + "&";
 
       let digestValue =
