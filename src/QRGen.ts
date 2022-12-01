@@ -52,13 +52,13 @@ class QRGen {
         //No contribuyente
         dRucRec =
           obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["dNumIDRec"][0];
-        //Nt010
+        /*//Nt010 // Se vuelve a rettirar, por que el valor debe ser como está en el campo
         if (
           obj["rDE"]["DE"][0]["gDatGralOpe"][0]["gDatRec"][0]["iTiOpe"][0] == 4
         ) {
           //Si es B2F entonces el dNumIDRec=0
-          dRucRec = "0";
-        }
+          dRucRec = "0";  // Se vuelve a rettirar, por que el valor debe ser como está en el campo
+        }*/
         qr += "dNumIDRec=" + dRucRec + "&";
       }
 
