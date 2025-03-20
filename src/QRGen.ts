@@ -8,7 +8,13 @@ class QRGen {
    * @param xml
    * @returns
    */
-  generateQR(xml: string, idCSC: string, CSC: string, infoAdicional: any, env: "test" | "prod") {
+  generateQR(
+    xml: string,
+    idCSC: string,
+    CSC: string,
+    infoAdicional: any,
+    env: "test" | "prod"
+  ) {
     return xml2js.parseStringPromise(xml).then((obj) => {
       if (
         !(
