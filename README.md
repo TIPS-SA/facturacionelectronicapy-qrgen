@@ -14,11 +14,7 @@ TypeScript:
 import qrgen from 'facturacionelectronicapy-qrgen';
 
 qrgen
-.generateQR(xmlSigned, idCSC, CSC, infoAdicional)
-.then(xml => console.log("XML con QR", xml));
-
-qrgen
-.generateQR(xmlSigned, idCSC, CSC, infoAdicional, env)
+.generateQR(xmlSigned, idCSC, CSC, env)
 .then(xml => console.log("XML con QR", xml));
 
 
