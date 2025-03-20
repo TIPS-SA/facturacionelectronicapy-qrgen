@@ -8,7 +8,7 @@ class QRGen {
    * @param xml
    * @returns
    */
-  generateQR(xml: string, idCSC: string, CSC: string, env: "test" | "prod") {
+  generateQR(xml: string, idCSC: string, CSC: string, infoAdicional: any, env: "test" | "prod") {
     return xml2js.parseStringPromise(xml).then((obj) => {
       if (
         !(
@@ -112,6 +112,13 @@ class QRGen {
       obj["rDE"]["gCamFuFD"]["dCarQR"] = {
         _: qrLink + qr,
       };
+
+      if (infoAdicional) {
+        obj["rDE"]["gCamFuFD"]["dInfAdic"] = {
+          _: infoAdicional,
+        };
+      }
+
       var builder = new xml2js.Builder();
       var xmlWithQR = builder.buildObject(obj);
       return xmlWithQR;
